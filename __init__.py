@@ -2,9 +2,6 @@ import bpy
 from bpy.props import StringProperty
 from bpy_extras.io_utils import ImportHelper
 
-bpy.context.scene["subtitles"] = ""
-
-
 def subtitles_process():
     bpy.context.scene["frame_final_end"] = 0
     filepath = bpy.context.scene["subtitles"]
