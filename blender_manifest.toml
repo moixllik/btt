@@ -7,7 +7,7 @@ tagline = "Adding subtitles in the Sequencer"
 maintainer = "Irving Montalvo <@Moixllik>"
 website = "https://moixllik.github.io/btt/"
 type = "add-on"
-tags = ["Subtitles", "Sequencer"]
+tags = ["Sequencer"]
 blender_version_min = "4.2.0"
 license = ["SPDX:GPL-3.0-or-later"]
 

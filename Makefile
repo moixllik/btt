@@ -6,3 +6,6 @@ build: update
 update:
 	sed -i 's/version = "0.0.0"/version = "$(VER)"/g' ./blender_manifest.toml
 
+server:
+	python3 -m http.server -d ./docs/
+
