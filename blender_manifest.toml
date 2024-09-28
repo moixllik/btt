@@ -1,0 +1,18 @@
+schema_version = "1.0.0"
+
+id = "btt"
+version = "0.0.0"
+name = "Blender Video Text Tracks"
+tagline = "Adding subtitles in the Sequencer"
+maintainer = "Irving Montalvo <@Moixllik>"
+website = "https://moixllik.github.io/btt/"
+type = "add-on"
+tags = ["Subtitles", "Sequencer"]
+blender_version_min = "4.2.0"
+license = ["SPDX:GPL-3.0-or-later"]
+
+[permissions]
+files = "Read local files"
+
+[build]
+paths_exclude_pattern = ["__pycache__/", "/.git/", "/*.zip"]
