@@ -3,7 +3,7 @@
 [Converter](https://moixllik.github.io/btt/converter) `.srt` and `.vtt` to `.btt`
 
 ```
-=./subtitles.btt;
+file=./subtitle.btt
 start=00:00:00+0;
 end=00:00:03+0;
 channel=1;

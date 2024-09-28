@@ -102,6 +102,8 @@ def subtitles_props(strip, source):
                     strip.color = subtitles_from_rgba(value)
                 case "box_color":
                     strip.box_color = subtitles_from_rgba(value)
+                case _:
+                    strip[name] = value
 
     strip.text = props[-1]
 
