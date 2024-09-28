@@ -1,5 +1,7 @@
 # Blender Video Text Tracks
 
+[Converter](https://moixllik.github.io/btt/converter) `.srt` and `.vtt` to `.btt`
+
 ```
 =./subtitles.btt;
 start=00:00:00+0;
