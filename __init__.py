@@ -65,45 +65,62 @@ def subtitles_active(count):
     scene["frame_final_end"] = frame_final_end
     return strip
 
+def subtitles_strip_prop(strip, name, value):
+    match name:
+        case "start":
+            strip.frame_start = subtitles_from_time(value)
+        case "end":
+            frame_final_end = subtitles_from_time(value)
+            strip.frame_final_end = frame_final_end
+            bpy.context.scene["frame_final_end"] = frame_final_end
+        case "channel":
+            strip.channel = int(value)
+        case "location":
+            x, y = value.split(" ")
+            strip.location = (float(x), float(y))
+        case "align_x":
+            strip.align_x = value.upper()
+        case "align_y":
+            strip.align_y = value.upper()
+        case "font_size":
+            strip.font_size = float(value)
+        case "use_box":
+            strip.use_box = True
+        case "wrap_width":
+            strip.wrap_width = float(value)
+        case "color":
+            strip.color = subtitles_from_rgba(value)
+        case "box_color":
+            strip.box_color = subtitles_from_rgba(value)
+        case _:
+            return True
+
+def subtitles_scene_props(scene, strip):
+    for name in scene.keys():
+        if name[0] == '@':
+            value = scene[name]
+            subtitles_strip_prop(strip, name[1:], value)
+
 
 def subtitles_props(strip, source):
+    scene = bpy.context.scene
     props = source.split(";\n")
     if isinstance(props, list):
         for prop in props[:-1]:
             name, value = prop.strip().split("=")
             name = name.strip()
             value = value.strip()
-            match name:
-                case "start":
-                    strip.frame_start = subtitles_from_time(value)
-                case "end":
-                    frame_final_end = subtitles_from_time(value)
-                    strip.frame_final_end = frame_final_end
-                    bpy.context.scene["frame_final_end"] = frame_final_end
-                case "channel":
-                    strip.channel = int(value)
-                case "location":
-                    x, y = value.split(" ")
-                    strip.location = (float(x), float(y))
-                case "align_x":
-                    strip.align_x = value.upper()
-                case "align_y":
-                    strip.align_y = value.upper()
-                case "font_size":
-                    strip.font_size = float(value)
-                case "use_box":
-                    strip.use_box = True
-                case "wrap_width":
-                    strip.wrap_width = float(value)
-                case "color":
-                    strip.color = subtitles_from_rgba(value)
-                case "box_color":
-                    strip.box_color = subtitles_from_rgba(value)
-                case _:
-                    strip[name] = value
+    
+            if name[0] == '@':
+                scene[name] = value
+            elif subtitles_strip_prop(strip, name, value):
+                strip[name] = value
 
-    strip.text = props[-1]
-
+    if len(props[-1]) > 0:
+        strip.text = props[-1]
+        subtitles_scene_props(scene,strip)
+    else:
+        bpy.context.scene.sequence_editor.sequences.remove(strip)
 
 def subtitles_strip_text(count, source):
     strip = subtitles_active(count)

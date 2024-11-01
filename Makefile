@@ -1,4 +1,5 @@
 VER=$(shell cat ./version.txt)
+DEMO=$(shell realpath ./demo.blend)
 
 build: update
 	zip btt-$(VER).zip ./__init__.py ./blender_manifest.toml
@@ -9,3 +10,5 @@ update:
 server:
 	python3 -m http.server -d ./docs/
 
+demo:
+	flatpak run org.blender.Blender $(DEMO)
