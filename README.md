@@ -1,4 +1,4 @@
-# Blender Video Text Tracks
+# BTT
 
 [Converter](https://moixllik.github.io/btt/converter) `.srt` and `.vtt` to `.btt`
 

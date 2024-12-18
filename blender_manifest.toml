@@ -2,7 +2,7 @@ schema_version = "1.0.0"
 
 id = "btt"
 version = "0.0.0"
-name = "Blender Video Text Tracks"
+name = "BTT"
 tagline = "Adding subtitles in the Sequencer"
 maintainer = "Irving Montalvo <@Moixllik>"
 website = "https://moixllik.github.io/btt/"
