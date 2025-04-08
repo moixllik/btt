@@ -1,6 +1,15 @@
-# BTT
+[Home](/btt/) |
+[Download](/btt/download) |
+[Converter](/btt/converter) |
+[Support](https://github.com/moixllik/btt/issues)
 
-[Converter](https://moixllik.github.io/btt/converter) `.srt` and `.vtt` to `.btt`
+---
+
+![screenshot](./images/screenshot.png)
+
+## BTT File
+
+For example: [./subtitles.btt](./subtitles.btt)
 
 ```ini
 @channel=1;
@@ -21,4 +30,3 @@ Videos
 with
 Subtitles
 ```
-
