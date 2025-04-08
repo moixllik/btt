@@ -1,53 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+[Home](/btt/) |
+[Download](/btt/download) |
+[Converter](/btt/converter) |
+[Support](https://github.com/moixllik/btt/issues)
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Converter | Blender Video Text Tracks</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-  <style>
-    textarea {
-      display: block;
-      width: 100%;
-    }
+---
 
-    label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--background);
-      border-radius: 5px;
-      height: 80px;
-    }
+## Convert to BTT
 
-    input {
-      outline: none;
-      width: fit-content;
-    }
-  </style>
-</head>
-
-<body>
-  <main>
-    <h1><a href="https://moixllik.github.io/btt/converter">Blender Video Text Tracks</a></h1>
-    <nav>
-      <a href="https://moixllik.github.io/btt/">Home</a>
-      | <a href="https://moixllik.github.io/btt/download">Download</a>
-      | <a href="https://moixllik.github.io/btt/converter">Converter</a>
-      | <a href="https://github.com/moixllik/btt/issues">Support</a>
-    </nav>
-    <h2>Convert to BTT</h2>
-    <form onsubmit="return false;">
-      <label>
-        <input type="file" name="source" accept=".srt,.vtt" onchange="onConvert(this)">
-      </label>
-      <button type="button" onclick="onCopy(this)">Copy</button>
-      <button type="button" onclick="onDownload(this)">Download</button>
-      <textarea name="result" rows="7" placeholder="BTT"></textarea>
-    </form>
-  </main>
-  <script>
+<form onsubmit="return false;">
+    <label>
+      <input type="file" name="source" accept=".srt,.vtt" onchange="onConvert(this)">
+    </label>
+    <button type="button" onclick="onCopy(this)">Copy</button>
+    <button type="button" onclick="onDownload(this)">Download</button>
+    <textarea name="result" rows="7" placeholder="BTT"></textarea>
+</form>
+<script>
     function onConvert(elm) {
       const form = elm.parentNode.parentNode
       const file = form.source.files[0]
@@ -104,7 +72,24 @@
       link.click()
       URL.revokeObjectURL(link.href)
     }
-  </script>
-</body>
+</script>
+<style>
+    textarea {
+      display: block;
+      width: 100%;
+    }
 
-</html>
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--background);
+      border-radius: 5px;
+      height: 80px;
+    }
+
+    input {
+      outline: none;
+      width: fit-content;
+    }
+</style>

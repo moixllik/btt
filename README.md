@@ -2,7 +2,7 @@
 
 [Converter](https://moixllik.github.io/btt/converter) `.srt` and `.vtt` to `.btt`
 
-```ini
+```s
 @channel=1;
 @font_size=120.0;
 @color=#ff0000ff;
